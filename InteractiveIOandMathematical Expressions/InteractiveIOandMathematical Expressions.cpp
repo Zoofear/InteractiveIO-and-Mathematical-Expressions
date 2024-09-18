@@ -1,20 +1,46 @@
-// InteractiveIOandMathematical Expressions.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+// InteractiveIOandMathematical Expressions.cpp : Project 2 Interest Earned
+// This program was made to take an inputted principal, interest rate, and compound, to calculate a report
 
 #include <iostream>
+#include <iomanip>
+#include <cmath>
+
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    //Variables 
+    double Amount;          //The amount of savings
+    double Principal;       //The original input in the investment
+    double InterestRate;    //The rate interest accrues
+    int TimesCompounded;    //The amount of times it compounds during a year
+    double Interest;        //The amount of interest accrued
+
+    //Input
+
+    cout << "what is your Principal?" << endl;
+    cin >> Principal;
+    cout << "What is your Interest Rate? " << endl;
+    cin >> InterestRate;
+    cout << "what number of times has your interest been compounded?" << endl;
+    cin >> TimesCompounded;
+
+    //Calculations
+
+    Amount = 1 + (InterestRate / TimesCompounded);
+    Amount = pow(Amount, TimesCompounded);          //Needs to be broken apart to use the Pow Function
+    Amount = Principal * Amount;
+
+    //Finding the interest
+
+    Interest = Amount - Principal;
+    
+    //Output
+    cout << "Interest Rate:" << setprecision(3) << fixed << setw(10) << InterestRate << endl;
+    cout << "Times Compounded:" << setw(10) << TimesCompounded << endl << fixed;
+    cout << "Principal:" << setprecision(2) << setw(10) << "$ " << Principal << endl << fixed;
+    cout << "Interest:" << setprecision(2) << setw(10) << "$ " << Interest << endl << fixed;
+    cout << "Amount in Savings:" << setprecision(2) << setw(10) << "$ " << Amount << endl << fixed;
+
+    return 0;
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
