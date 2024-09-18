@@ -1,5 +1,5 @@
 // InteractiveIOandMathematical Expressions.cpp : Project 1 Ingredient Adjuster
-// This project is made to adjust a recipe for the different kind of
+// This project is made to adjust a recipe for the different kind amount of cookies
 
 #include <iostream>
 #include <iomanip>
